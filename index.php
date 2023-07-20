@@ -1,5 +1,10 @@
-<?php include('./templates/header.php') ?>
+<?php
+if ($_GET['page'] == "owners") {
+    
+}
+?>
 
+<?php include('./templates/header.php') ?>
 <main>
     <h1>Список информационных систем</h1>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по названию..">
@@ -17,6 +22,7 @@
             <tbody>
                 <?php
                 require('./ config/connetion.php');
+
                 //SELECT InformSystems.id, title,Owners.FIO FROM InformSystems,Owners GROUP by InformSystems.id;
                 $sql = "SELECT i.id , i.title, o.FIO AS owner, COUNT(v.id) AS vm_count FROM InformSystems as i JOIN Owners as o ON i.owner = o.id LEFT JOIN VMs as v on i.id = v.id GROUP BY i.id, i.title, o.FIO;";
                 if ($result = $conn->query($sql)) {
