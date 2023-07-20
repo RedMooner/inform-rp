@@ -17,10 +17,19 @@
         </div>
         <nav>
             <ul>
-                <li><a href="">Информационные системы</a></li>
-                <li><a href="">Руководители проектов</a></li>
-                <li><a href="">Виртуальные машины</a></li>
+                <li><a href="?page=is">Информационные системы</a></li>
+                <li><a href="?page=owners">Руководители проектов</a></li>
+                <li><a href="?page=vms">Виртуальные машины</a></li>
             </ul>
         </nav>
-        <button>Войти</button>
+        <?php
+
+        if($_SESSION['isAuth'] == "true"){
+            echo '<button onclick="document.location=\'?page=logout\'">Выйти</button>';
+
+        }else{
+            echo '<button onclick="document.location=\'?page=login\'">Войти</button>';
+        }
+      
+        ?>
     </header>
