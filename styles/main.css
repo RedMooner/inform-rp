@@ -75,6 +75,7 @@ header button:hover {
   background: #026d97;
 }
 main {
+  animation: fadeIn 1s ease-in-out;
   margin: 80px;
   /* -- import Roboto Font ---------------------------- */
   /* -- You can use this tables in Bootstrap (v3) projects. -- */
@@ -725,6 +726,9 @@ main .table-hover.table-mc-deep-orange > tbody > tr:hover > th {
   main .table-responsive-vertical .table-hover.table-mc-deep-orange > tbody > tr > td:hover {
     background-color: #ffccbc;
   }
+}
+tr {
+  animation: fadeIn 0.3s ease-in-out;
 }
 .login-form {
   margin: 0 auto;
