@@ -18,6 +18,7 @@
     border-color: #007DB0;
     box-shadow: 0 0 8px #007DB0;
 }
+
 .logo-content {
     display: flex;
     align-items: center;
@@ -37,6 +38,7 @@
         font-size: 30px;
     }
 }
+
 header {
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     display: flex;
@@ -91,6 +93,7 @@ header {
 
 main {
     animation: fadeIn 1s ease-in-out;
+
     h1 {
         margin: 40px;
         color: #007DB0;
@@ -239,7 +242,7 @@ main {
         // Nesting
         .table {
             background-color: @table-bg;
-         
+
         }
 
         // Remove border
@@ -929,9 +932,10 @@ main {
     }
 }
 
-tr{
+tr {
     animation: fadeIn 0.3s ease-in-out;
 }
+
 .login-form {
     margin: 0 auto;
     display: flex;
@@ -986,7 +990,8 @@ tr{
 .login-form {
     animation: fadeIn 1s ease-in-out
 }
-.delete{
+
+.delete {
     padding: 5px;
     margin-right: 10px;
     background: #ff0303;
@@ -1000,10 +1005,12 @@ tr{
     cursor: pointer;
     text-decoration: none;
 }
-.delete:hover{
+
+.delete:hover {
     background: #af0000;
 }
-.edit{
+
+.edit {
     padding: 5px;
     background: #0026ff;
     color: whitesmoke;
@@ -1016,6 +1023,51 @@ tr{
     cursor: pointer;
     text-decoration: none;
 }
-.edit:hover{
+
+.edit:hover {
     background: #001dc4;
+}
+
+.update-form {
+    form {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px #007DB3 solid;
+    }
+
+    input[type="submit"] {
+        background-color: #007DB3;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Добавление анимации */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    form {
+        animation: fadeIn 1s ease-in-out;
+    }
 }
