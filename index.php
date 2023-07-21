@@ -55,15 +55,16 @@ require('./ config/connetion.php');
     } elseif ($_GET['page'] == "login") {
         include('./pages/login.php');
     } else {
-        echo '<h1>Вы не авторизированы!</h1>';
-        echo '
-        <div class="center-block">
-             <div class="block">
-                 <p>Для создания учетной записи необходимо написать по адресу:</p>
-                <p>ammotyrev@it.permkrai.ru</p>
-            </div>
-        </div>
-        ';
+        // echo '<h1>Вы не авторизированы!</h1>';
+        // echo '
+        // <div class="center-block">
+        //      <div class="block">
+        //          <p>Для создания учетной записи необходимо написать по адресу:</p>
+        //         <p>ammotyrev@it.permkrai.ru</p>
+        //     </div>
+        // </div>
+        // ';
+        include('./pages/login.php');
     }
 
     ?>
