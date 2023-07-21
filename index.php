@@ -1,11 +1,20 @@
-<?php 
+<?php
 session_start();
+require('./ config/connetion.php');
 ?>
 
 <?php include('./templates/header.php') ?>
+
 <main>
-    
+
     <?php
+    if ($_SESSION['isAdmin'] == "true") {
+        if (isset($_GET['delete'])) {
+            $sql = "delete from InformSystems where id = " . $_GET['delete'];
+            $result = $conn->query($sql);
+            header('Location: ' . 'index.php');
+        }
+    }
     if ($_SESSION['isAuth'] == "true") {
         if ($_GET['page'] == "is" || !isset($_GET['page'])) {
             include('./tables/informSystems.php');

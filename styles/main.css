@@ -775,3 +775,36 @@ tr {
 .login-form {
   animation: fadeIn 1s ease-in-out;
 }
+.delete {
+  padding: 5px;
+  margin-right: 10px;
+  background: #ff0303;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  width: 130px;
+  height: 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.delete:hover {
+  background: #af0000;
+}
+.edit {
+  padding: 5px;
+  background: #0026ff;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  height: 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.edit:hover {
+  background: #001dc4;
+}

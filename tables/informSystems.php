@@ -9,6 +9,10 @@
                 <th>Наименование</th>
                 <th>Ответственный</th>
                 <th>Кол-во ВМ</th>
+                <?php
+                if ($_SESSION['isAdmin'] == "true") {
+                    echo "<th>Действия</th>";
+                } ?>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +35,12 @@
                     echo '<a href="https://github.com/zavoloklom/material-design-color-palette" target="_blank">' . $fio . '</a>';
                     echo '</td>';
                     echo '<td data-title="Status">' . $count . ' шт.</td>';
+                    if ($_SESSION['isAdmin'] == "true") {
+                        echo '<td >';
+                        echo '<a href="' . '?delete=' . $id . '" class="delete">Удалить</a>';
+                        echo '<a href="' . '?edit=' . $id . '" class="edit">Редактировать</a>';
+                        echo '</td>';
+                    }
                     echo "</tr>";
                 }
             }
