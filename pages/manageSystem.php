@@ -1,18 +1,20 @@
 <?php
-$id = $_GET['update'];
+if (isset($_GET['update'])) {
+    $id = $_GET['update'];
+}
 $title = "";
 $owner_id = -1;
 
+if (isset($_GET['update']))
+    $sql = "SELECT * FROM InformSystems where id = " . $id;
 
-$sql = "SELECT * FROM InformSystems where id = " . $id;
-
-
-if ($result = $conn->query($sql)) {
-    foreach ($result as $owner) {
-        $title = $owner['title'];
-        $owner_id = $owner['owner'];
+if (isset($_GET['update']))
+    if ($result = $conn->query($sql)) {
+        foreach ($result as $owner) {
+            $title = $owner['title'];
+            $owner_id = $owner['owner'];
+        }
     }
-}
 
 
 ?>
@@ -21,7 +23,14 @@ if ($result = $conn->query($sql)) {
         <input type="hidden" name="id" value="">
 
         <label for="title">Название информационной системы:</label>
-        <input type="text" name="title" value="<?php echo $title ?>">
+        <?php
+        if (isset($_GET['update'])) { ?>
+            <input type="text" name="title" value="<?php echo $title ?>">
+            <?php
+        } else {
+            echo '<input type="text" name="title" value="">';
+        }
+        ?>
 
         <label for="owner">Владелец:</label>
         <select name="owner">
@@ -46,11 +55,23 @@ if ($result = $conn->query($sql)) {
 </div>
 
 <?php
-if (isset($_POST['title'])) {
-    if (isset($_POST['owner'])) {
-        $sql = "update InformSystems set title='" . $_POST['title'] . "', owner=" . $_POST['owner'] . ' where id=' . $id;
-        $result = $conn->query($sql);
-        header('Location: ' . 'index.php');
+if (isset($_GET['update'])) {
+    if (isset($_POST['title'])) {
+        if (isset($_POST['owner'])) {
+            $sql = "update InformSystems set title='" . $_POST['title'] . "', owner=" . $_POST['owner'] . ' where id=' . $id;
+            $result = $conn->query($sql);
+            header('Location: ' . 'index.php');
+        }
+    }
+} else {
+    if (isset($_POST['title'])) {
+        if (isset($_POST['owner'])) {
+            $sql = "insert into InformSystems values(null,'" . $_POST['title'] . "', '" . $_POST['owner'] . "')";
+            echo $sql;
+            $result = $conn->query($sql);
+            header('Location: ' . 'index.php');
+        }
     }
 }
+
 ?>

@@ -15,7 +15,10 @@ require('./ config/connetion.php');
             header('Location: ' . 'index.php');
         }
         if (isset($_GET['update'])) {
-            
+            include('./pages/manageSystem.php');
+            return;
+        }
+        if (isset($_GET['addis'])) {
             include('./pages/manageSystem.php');
             return;
         }

@@ -5,6 +5,7 @@ if (isset($_GET['search'])) {
 ?>
 <h1>Список информационных систем</h1>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по названию..">
+<a href="?addis=true">Добавить</a>
 <div class="table-responsive-vertical shadow-z-1">
     <!-- Table starts here -->
     <table id="table" class="table table-hover table-mc-light-blue">
