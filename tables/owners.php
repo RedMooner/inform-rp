@@ -32,7 +32,12 @@ if (isset($_GET['search'])) {
                     echo '<td data-title="ID">' . $id . '</td>';
                     echo '<td data-title="Name">' . $title . '</td>';
                     echo ' <td data-title="Link">';
-                    echo '<a href="?page=is&search=' . $fio . '" target="_blank">' . $fio . '</a>';
+                    $myArray = explode(',', $fio);
+                    foreach ($myArray as $el) {
+                        echo '<a href="?page=is&search=' . $el . '" target="_blank">' . $el . '</a>';
+                        echo '  ,  ';
+                    }
+
                     echo '</td>';
                     echo "</tr>";
                 }

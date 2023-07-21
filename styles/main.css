@@ -845,3 +845,15 @@ tr {
 .update-form form {
   animation: fadeIn 1s ease-in-out;
 }
+.add {
+  background-color: #007DB3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+a {
+  color: #0026ff;
+}
