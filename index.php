@@ -22,6 +22,20 @@ require('./ config/connetion.php');
             include('./pages/manageSystem.php');
             return;
         }
+        if (isset($_GET['delete_owner'])) {
+            echo 'delete';
+            $sql = "delete from Owners where id = " . $_GET['delete_owner'];
+            $result = $conn->query($sql);
+            header('Location: ' . 'index.php?page=owners');
+        }
+        if (isset($_GET['update_owner'])) {
+            include('./pages/manageOwner.php');
+            return;
+        }
+        if(isset($_GET['addowner'])){
+            include('./pages/manageOwner.php');
+            return;
+        }
     }
     if ($_SESSION['isAuth'] == "true") {
         if ($_GET['page'] == "is" || !isset($_GET['page'])) {

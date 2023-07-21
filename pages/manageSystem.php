@@ -50,7 +50,8 @@ if (isset($_GET['update']))
             ?>
         </select>
 
-        <input type="submit" value="Изменить">
+        <input type="submit" value="<?php if(isset($_GET['update'])) echo 'Изменить'; else echo 'Добавить';  ?>">
+
     </form>
 </div>
 

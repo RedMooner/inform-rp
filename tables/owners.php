@@ -7,6 +7,11 @@ if (isset($_GET['search'])) {
 
 <h1>Список ответственных за информационные системы</h1>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по названию..">
+<?php
+if ($_SESSION['isAdmin'] == "true") {
+    ?>
+    <a class="add" href="?addowner=true">Добавить</a>
+<?php } ?>
 <div class="table-responsive-vertical shadow-z-1">
     <!-- Table starts here -->
     <table id="table" class="table table-hover table-mc-light-blue">
@@ -41,7 +46,12 @@ if (isset($_GET['search'])) {
                         echo '<a href="?page=is&search=' . $el . '" target="_blank">' . $el . '</a>';
                         echo '  ,  ';
                     }
-
+                    if ($_SESSION['isAdmin'] == "true") {
+                        echo '<td >';
+                        echo '<a href="' . '?delete_owner=' . $id . '" class="delete">Удалить</a>';
+                        echo '<a href="' . '?update_owner=' . $id . '" class="edit">Редактировать</a>';
+                        echo '</td>';
+                    }
                     echo '</td>';
                     echo "</tr>";
                 }
