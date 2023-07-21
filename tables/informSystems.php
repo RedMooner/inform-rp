@@ -43,7 +43,7 @@ if (isset($_GET['search'])) {
                     if ($_SESSION['isAdmin'] == "true") {
                         echo '<td >';
                         echo '<a href="' . '?delete=' . $id . '" class="delete">Удалить</a>';
-                        echo '<a href="' . '?edit=' . $id . '" class="edit">Редактировать</a>';
+                        echo '<a href="' . '?update=' . $id . '" class="edit">Редактировать</a>';
                         echo '</td>';
                     }
                     echo "</tr>";

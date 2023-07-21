@@ -14,6 +14,11 @@ require('./ config/connetion.php');
             $result = $conn->query($sql);
             header('Location: ' . 'index.php');
         }
+        if (isset($_GET['update'])) {
+            
+            include('./pages/manageSystem.php');
+            return;
+        }
     }
     if ($_SESSION['isAuth'] == "true") {
         if ($_GET['page'] == "is" || !isset($_GET['page'])) {
