@@ -15,6 +15,10 @@ if (isset($_GET['search'])) {
                 <th>ID</th>
                 <th>Фамилия, имя, ответсво</th>
                 <th>Системы</th>
+                <?php
+                if ($_SESSION['isAdmin'] == "true") {
+                    echo "<th>Действия</th>";
+                } ?>
             </tr>
         </thead>
         <tbody>

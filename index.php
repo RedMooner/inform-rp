@@ -42,6 +42,14 @@ require('./ config/connetion.php');
         include('./pages/login.php');
     } else {
         echo '<h1>Вы не авторизированы!</h1>';
+        echo '
+        <div class="center-block">
+             <div class="block">
+                 <p>Для создания учетной записи необходимо написать по адресу:</p>
+                <p>ammotyrev@it.permkrai.ru</p>
+            </div>
+        </div>
+        ';
     }
 
     ?>

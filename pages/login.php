@@ -25,10 +25,16 @@ if (isset($_POST['login'])) {
                     $_SESSION['isAdmin'] = "false";
                 }
             }
-           header('Location: ' . 'index.php');
+            header('Location: ' . 'index.php');
         } else {
             echo "<h1>Ошибка входа!</h1>";
         }
     }
 }
 ?>
+<div class="info-block">
+    <div class="block">
+        <p>Для создания учетной записи необходимо написать по адресу:</p>
+        <p>ammotyrev@it.permkrai.ru</p>
+    </div>
+</div>
