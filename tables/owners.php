@@ -1,3 +1,10 @@
+<?php
+if (isset($_GET['search'])) {
+    echo "<script>let search = '" . $_GET['search'] . "';</script>";
+}
+
+?>
+
 <h1>Список ответственных за информационные системы</h1>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по названию..">
 <div class="table-responsive-vertical shadow-z-1">
@@ -25,7 +32,7 @@
                     echo '<td data-title="ID">' . $id . '</td>';
                     echo '<td data-title="Name">' . $title . '</td>';
                     echo ' <td data-title="Link">';
-                    echo '<a href="https://github.com/zavoloklom/material-design-color-palette" target="_blank">' . $fio . '</a>';
+                    echo '<a href="?page=is&search=' . $fio . '" target="_blank">' . $fio . '</a>';
                     echo '</td>';
                     echo "</tr>";
                 }
@@ -58,4 +65,9 @@
             }
         }
     }
+</script>
+<script>
+    input = document.getElementById("myInput");
+    input.value = search;
+    myFunction();
 </script>
